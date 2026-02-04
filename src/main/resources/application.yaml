@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: bookhub
+  main:
+    banner-mode: off
+  messages:
+    encoding: UTF-8
+
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=DEMO_ENI_ECOLE;integratedSecurity=false;encrypt=false;trustServerCertificate=false
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: IAmFreeNow!411
+
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create  # always create a new schema by destroying previous data
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: TRACE
+    sql: debug
+

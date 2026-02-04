@@ -1,0 +1,21 @@
+# Emploie la base H2 (en mémoire) pour éviter les dépendances à MS SQL Server durant l'exécution des tests
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop  # Create and destroys the schema at the end of the session
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: TRACE
+    sql: debug
