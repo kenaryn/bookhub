@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@ToString
+@ToString(of = { "passwordHash"})
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,7 +36,7 @@ public class User {
     private String phoneNumber;
 
     @Column(name = "password_hash", nullable = false, length = 68)
-    private String passhordHash;
+    private String passwordHash;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
